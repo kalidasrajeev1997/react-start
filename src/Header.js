@@ -13,27 +13,24 @@ const prop = "name";
 const name = data[prop];
 
 export const Header = (props) => {
-  // const { countProp, setCountProp, plus } = props;
+  const { setCountProp, plus } = props;
   return (
     <div>
-      {/* <div>{countProp}</div>
-
       <button
         onClick={() => {
-          plus();
-          setCountProp(countProp + 1);
+          setCountProp((prev) => prev + 1);
         }}
       >
         +
       </button>
       <button
         onClick={() => {
-          setCountProp(countProp - 1);
+          setCountProp((prev) => prev - 1);
         }}
       >
         -
-      </button> */}
-      {array
+      </button>
+      {/* {array
         .filter((p) => p.age > 22)
         .map((person) => {
           return (
@@ -47,7 +44,7 @@ export const Header = (props) => {
               </ul>
             </div>
           );
-        })}
+        })} */}
     </div>
   );
 };
