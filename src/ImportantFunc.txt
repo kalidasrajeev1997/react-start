@@ -1,0 +1,32 @@
+const [state, updationFunction] = useState(initialValue)
+
+useEffect(() => {
+  ---await---
+  async function fetchData() {
+    const res = await fetch(`https://api.quotable.io/quotes/random`);
+    const json = await res.json();
+    //   setQuote(json);
+  }
+    
+    
+----then---
+fetch(`https://api.quotable.io/quotes/random`)
+  .then((value) => {
+    return value.json();
+  })
+  .then((data) => {
+    setQuote(data);
+  });
+  fetchData();
+}, [count]);
+
+useEffect(callback,dependencyarray);
+
+array functions:
+map() --> returns array
+filter() --> returns array
+find() --> returns object/single value
+reduce() --> returns single value
+
+
+

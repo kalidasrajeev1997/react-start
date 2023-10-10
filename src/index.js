@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import Effect from "./Effect";
 import "./app.css";
+import Color from "./Color";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -19,6 +20,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root file(Parent Element)
 root.render(
   <React.StrictMode>
+    {/* <Color /> */}
     <Effect />
   </React.StrictMode>
 );

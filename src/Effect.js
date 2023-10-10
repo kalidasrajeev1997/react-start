@@ -35,43 +35,55 @@ const todoList = [
 const Effect = () => {
   const [count, setCount] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [todo, setTodo] = useState("");
+  const [quote, setQuote] = useState("");
   const [list, setList] = useState(todoList);
   const [fontSize, setFontSize] = useState(true);
   //   const [t]
 
-  //   useEffect(() => {
-  //     setLoading(true);
-  //     setFontSize(!fontSize);
-  //     fetch(`https://api.quotable.io/quotes/random`)
-  //       .then((response) => response.json())
-  //       .then((json) => {
-  //         setTodo(json);
-  //         setLoading(false);
-  //       });
-  //   }, [count]);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   (async function () {})();
+  //   // Array.map(()=>{})
+  //   // (async () => {})();
+  //   async function fetchData() {
+  //     const res = await fetch(`https://api.quotable.io/quotes/random`);
+  //     const json = await res.json();
+  //     setTodo(json);
+  //     setLoading(false);
+  //   }
+  //   fetchData();
+  // }, [count]);
 
-  const handleCheck = (e, index) => {
-    const listCopy = list;
-  };
+  //callback function
+
+  useEffect(() => {
+    //---await---
+    async function fetchData() {
+      const res = await fetch(`https://api.quotable.io/quotes/random`);
+      const json = await res.json();
+      setQuote(json);
+    }
+    //----then---
+    // fetch(`https://api.quotable.io/quotes/random`)
+    //   .then((value) => {
+    //     return value.json();
+    //   })
+    //   .then((data) => {
+    //     setQuote(data);
+    //   });
+    fetchData();
+  }, [count]);
+
+  // const handleCheck = (e, index) => {
+  //   const listCopy = list;
+  // };
 
   if (loading) {
     return <Container>loading</Container>;
   } else {
     return (
       <Container>
-        {/* <Button
-          onClick={() => {
-            setCount(count + 1);
-          }}
-          background={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
-          color={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
-        >
-          change
-        </Button>
         <Button
-          className="asdas"
-          style={{}}
           onClick={() => {
             setCount(count + 1);
           }}
@@ -81,14 +93,14 @@ const Effect = () => {
           change
         </Button>
         <div>
-          {todo[0]?.content}
+          {quote[0]?.content}
           <br />
-          <Span fontSize={fontSize ? 12 : 24}>Author: {todo[0]?.author}</Span>
-        </div> */}
+          <Span fontSize={fontSize ? 12 : 24}>Author: {quote[0]?.author}</Span>
+        </div>
 
         {/* {todo.length && todo[0].content} */}
         {/* {todo.length ? todo[0].content : null} */}
-        <input
+        {/* <input
           value={todo}
           type="text"
           placeholder="enter todo"
@@ -113,7 +125,7 @@ const Effect = () => {
               <span>{t.title}</span>
             </div>
           );
-        })}
+        })} */}
       </Container>
     );
   }
