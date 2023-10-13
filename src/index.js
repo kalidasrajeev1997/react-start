@@ -20,7 +20,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root file(Parent Element)
 root.render(
   <React.StrictMode>
-    {/* <Color /> */}
-    <Effect />
+    <Color />
+    {/* <Effect /> */}
   </React.StrictMode>
 );
