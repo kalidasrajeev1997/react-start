@@ -26,6 +26,11 @@ const Forms = () => {
     } else {
       setError({ ...error, passwordError: false });
     }
+    const pattern = new RegExp(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/
+    );
+    if (pattern.test(loginDetails.email)) {
+    }
     const response = await fetch("http://localhost:8000/signup", {
       method: "POST",
       body: JSON.stringify(loginDetails),
