@@ -35,6 +35,7 @@ const todoList = [
 const Effect = () => {
   const [count, setCount] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [category, setCat] = useState("coffee");
   const [quote, setQuote] = useState("");
   const [list, setList] = useState(todoList);
   const [fontSize, setFontSize] = useState(true);
@@ -87,6 +88,7 @@ const Effect = () => {
           onClick={() => {
             setCount(count + 1);
           }}
+          selected={category === "Coffee"}
           background={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
           color={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
         >

@@ -4,6 +4,9 @@ import App from "./App";
 import Effect from "./Effect";
 import "./app.css";
 import Color from "./Color";
+import Layout from "./Layout";
+import Website from "./Website";
+import Router from "./Routes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -20,7 +23,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root file(Parent Element)
 root.render(
   <React.StrictMode>
-    <Color />
+    <Router />
     {/* <Effect /> */}
   </React.StrictMode>
 );

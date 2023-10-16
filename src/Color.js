@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link, useNavigate } from "react-router-dom";
 
 const ingredients = ["Coffee", "Expresso"];
 const coffee = "Coffee";
@@ -39,12 +40,14 @@ const array = [
 const Color = () => {
   const [color, setColor] = useState(array);
   const [view, setViewType] = useState("list");
+  const navigate = useNavigate();
 
   const handleButtonChange = (id) => {
     const changed = color.map((clr) => {
       return clr.id === id ? { ...clr, selected: !clr.selected } : clr;
     });
     setColor(changed);
+    navigate("/effect");
   };
 
   return (
@@ -96,6 +99,8 @@ const Color = () => {
           </button>
         </>
       ) : null}
+
+      <Link to="/effect">hello</Link>
     </>
   );
 };

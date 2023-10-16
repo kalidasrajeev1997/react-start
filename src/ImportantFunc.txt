@@ -30,3 +30,9 @@ reduce() --> returns single value
 
 
 
+react-router-dom
+// routers
+// error element
+// params (useParams)
+// replace (Navigate)
+// link, useNavigate
